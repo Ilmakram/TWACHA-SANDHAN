@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+model-experimentation.ipynb/
+
+# Model files
+*.h5
+*.pkl
+*.pt
+
+# Dataset
+data/
+dataset/
+IMG_CLASSES/
+
+# Env files
+.env
+
+
+
+# OS files
+.DS_Store
+Backend/ 
+#model-experimentation.ipynb/

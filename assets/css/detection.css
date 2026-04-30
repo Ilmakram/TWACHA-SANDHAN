@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: white;
+  background: linear-gradient(90deg, #7d7272, #002057);
+}
+
+/* Container */
+.upload {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.container {
+  width: 40%;
+  margin: auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Heading */
+h2 {
+  margin-bottom: 20px;
+}
+
+/* File Input */
+.item-img {
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+}
+
+/* Button */
+.dashbtn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-size: 16px;
+  background: #03182c;
+  border: 2px solid #0d0d4c;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dashbtn:hover {
+  background: #1cbe1c;
+  color: black;
+}
+
+/* Output */
+.output {
+  margin-top: 25px;
+  padding: 15px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 8px;
+  font-size: 18px;
+}

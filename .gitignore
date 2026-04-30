@@ -1,0 +1,24 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+tf_env/
+backend1/tf_env/
+
+# Trained models, datasets, and generated outputs
+backend1/output/
+backend1/IMG_CLASSES/
+models/
+logs/
+*.pb
+*.keras
+*.h5
+*.pkl
+*.pt
+
+# Local secrets and OS/editor files
+.env
+.DS_Store
+Thumbs.db

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Skin Detection</title>
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/detection.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+<section class="upload">
+  <div class="container">
+    <h2>Upload Your Skin Image</h2>
+
+    <!-- FORM -->
+    <form id="imageSelectionForm">
+      <input type="file" class="item-img form-control" required>
+      <br><br>
+      <input type="submit" class="dashbtn btn btn-primary" value="Predict">
+    </form>
+
+    <!-- OUTPUT -->
+    <p class="output" style="margin-top:20px; font-weight:bold;"></p>
+
+    <!-- CHATBOT -->
+    <div id="chatSection" style="display:none; margin-top:20px;">
+      <p><b>Know more about this disease 👇</b></p>
+
+      <div id="chatBox" style="height:200px; overflow-y:auto; background:#fff; color:black; padding:10px; border-radius:5px;"></div>
+
+      <input type="text" id="userInput" placeholder="Ask something..." style="width:70%; padding:10px; margin-top:10px;">
+      <button onclick="sendMessage()" class="dashbtn">Send</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- JS -->
+<script src="assets/js/detect.js"></script>
+
+</body>
+</html>
