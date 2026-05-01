@@ -45,6 +45,23 @@ except Exception as e:
 
 IMG_SIZE = 224  # default image size
 
+@app.get("/")
+async def root():
+    return {"status": "ok", "message": "Skin disease prediction backend running"}
+
+class ChatRequest(BaseModel):
+    message: str
+    disease: str
+
+@app.post("/chat")
+async def chat(request: ChatRequest):
+    reply = (
+        f"Thanks for your message about {request.disease}. "
+        "This is a demo answer; please consult a medical professional for diagnosis."
+    )
+    return {"reply": reply}
+
+
 def preprocess_image(image: Image.Image) -> np.ndarray:
     """Resize and normalize image for model input."""
     image = image.resize((IMG_SIZE, IMG_SIZE))

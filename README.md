@@ -38,3 +38,51 @@ The API currently expects the trained model and label map at:
 - `backend1/output/label_map.json`
 
 Those files are intentionally ignored because the model is too large for normal GitHub pushes. Store them in external storage, release assets, or Git LFS if your deployment platform supports it.
+
+## Deploying the Backend
+
+The backend is a FastAPI service in `backend1/app.py`. It can be deployed separately from the static frontend.
+
+### Recommended backend host
+- Render, Railway, Azure Web App, PythonAnywhere, or Fly.io
+
+### Required files
+- `backend1/requirements.txt`
+- `backend1/app.py`
+- `backend1/output/best_model.h5`
+- `backend1/output/label_map.json`
+
+### Start command
+
+For Render/Railway, use:
+
+```bash
+cd backend1
+uvicorn app:app --host 0.0.0.0 --port $PORT
+```
+
+### If you want a simple deploy helper
+Create a `backend1/Procfile` with:
+
+```text
+web: uvicorn app:app --host 0.0.0.0 --port $PORT
+```
+
+## Connecting the Frontend
+
+The frontend currently uses `assets/js/detect.js` to call the backend. It now supports overriding the backend host with `window.BACKEND_URL`.
+
+In your deployed frontend HTML, add this before the script that loads `detect.js`:
+
+```html
+<script>
+  window.BACKEND_URL = "https://your-backend-url.example.com";
+</script>
+```
+
+Then deploy the frontend to Vercel or any static host.
+
+## Notes
+
+- Your backend currently also supports a simple `/chat` endpoint so chat on the frontend will not fail.
+- Keep `backend1/output/` files available to the backend service during deployment.

@@ -1,3 +1,5 @@
+const BACKEND_URL = window.BACKEND_URL || "http://127.0.0.1:8000";
+
 // Handle form submission
 $("#imageSelectionForm").on("submit", function (e) {
   e.preventDefault();
@@ -13,7 +15,7 @@ $("#imageSelectionForm").on("submit", function (e) {
   formData.append("file", file);
 
   $.ajax({
-    url: "http://127.0.0.1:8000/predict",
+    url: BACKEND_URL + "/predict",
     type: "POST",
     data: formData,
     processData: false,
@@ -57,7 +59,7 @@ function sendMessage() {
 
   chatBox.innerHTML += "<p><b>You:</b> " + input + "</p>";
 
-  fetch("http://127.0.0.1:8000/chat", {
+  fetch(BACKEND_URL + "/chat", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
