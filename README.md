@@ -46,6 +46,14 @@ The backend is a FastAPI service in `backend1/app.py`. It can be deployed separa
 ### Recommended backend host
 - Render, Railway, Azure Web App, PythonAnywhere, or Fly.io
 
+### Render-specific deployment
+- A `render.yaml` file is included at the repository root.
+- Render will deploy the backend service from `backend1` using `uvicorn`.
+- You can also create the service manually in Render and set:
+  - Root directory: `backend1`
+  - Build command: `pip install -r requirements.txt`
+  - Start command: `uvicorn app:app --host 0.0.0.0 --port $PORT`
+
 ### Required files
 - `backend1/requirements.txt`
 - `backend1/app.py`
