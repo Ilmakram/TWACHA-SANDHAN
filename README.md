@@ -49,10 +49,12 @@ The backend is a FastAPI service in `backend1/app.py`. It can be deployed separa
 ### Render-specific deployment
 - A `render.yaml` file is included at the repository root.
 - Render will deploy the backend service from `backend1` using `uvicorn`.
+- Render must use Python 3.11 for TensorFlow compatibility.
 - You can also create the service manually in Render and set:
   - Root directory: `backend1`
-  - Build command: `pip install -r requirements.txt`
+  - Build command: `python -m pip install --upgrade pip && pip install -r requirements.txt`
   - Start command: `uvicorn app:app --host 0.0.0.0 --port $PORT`
+- A `backend1/runtime.txt` file is included to force Python 3.11.
 
 ### Required files
 - `backend1/requirements.txt`
